@@ -1,28 +1,13 @@
 module.exports = {
   extends: [require.resolve('@umijs/lint/dist/config/eslint')],
+  rules: {
+    // 禁止出现定义了，但未使用过的变量
+    'no-unused-vars': 1,
+    // 阻止 var 的使用，推荐用 let 和 const
+    'no-var': 'warn',
+  },
   globals: {
     page: true,
     REACT_APP_ENV: true,
   },
 };
-
-// module.exports = {
-//   extends: [require.resolve('@umijs/fabric/dist/eslint')],
-//   rules: {
-//     'comma-dangle': [
-//       'error',
-//       {
-//         arrays: 'only-multiline',
-//         objects: 'only-multiline',
-//         imports: 'only-multiline',
-//         exports: 'never',
-//         functions: 'never',
-//       },
-//     ],
-//     'max-len': ['error', { code: 200 }],
-//   },
-//   globals: {
-//     ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: true,
-//     page: true,
-//   },
-// };
